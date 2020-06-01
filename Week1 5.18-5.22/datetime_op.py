@@ -48,6 +48,7 @@ def test_pickle_and_zip(data, filename):
 
 
 if __name__ == '__main__':
+    '''
 # 1、输入当前时间，输出上个月的1号日期
     # string --> datetime obj
     inputCurrentTime = "2020-5-19 15:25:05"
@@ -101,3 +102,12 @@ if __name__ == '__main__':
     # fix_imports为true且protocol小于3，可保存为python2可读的pickle数据流
     # protocol 整数，指定pickler使用协议版本，支持协议是0-HIGHEST_PROTOCOL。默认为DEFAULT_PROTOCOL。若指定为负数，则选择HIGHEST_PROTOCOL。
     # 协议0与gzip组合效果较优
+    '''
+    sell_time = "2014-03-0303:03:03"
+    inputCurrentTime = "2020-5-19 15:25:05"
+
+    todaydatetime = datetime.datetime.strptime(sell_time, "%Y-%m-%d%H:%M:%S")
+    print(todaydatetime)
+    
+    sold_month = datetime.datetime.strftime(todaydatetime, "%Y-%m-%d %H:%M:%S")[0:7]
+    print(sold_month)

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+service ShopService {
+	rpc PricesNumber (TimeRequest) returns (priceInfo) {}
+	rpc SalesNUmber (SalesQuest) returns (salesInfo) {}
+}
+
+message TimeRequest {
+	int32 good_id = 1;
+	string timeStart = 2;
+	string timeEnd = 3;
+}
+
+message priceInfo {
+	int32 max_price = 1;
+	int32 min_price = 2;
+	int32 avg_price = 3;
+}
+
+message SalesQuest {
+	int32 good_id = 1;
+}
+
+message salesInfo {
+	string sale_best = 1;
+	string sale_worst = 2;
+	repeated string snippets = 3;
+}
